@@ -104,6 +104,7 @@ support packages.
 %doc %{_texmfdistdir}/source/latex/revtex/ltxgrid.dtx
 %doc %{_texmfdistdir}/source/latex/revtex/ltxutil.dtx
 %doc %{_texmfdistdir}/source/latex/revtex/revtex4-1.dtx
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -114,3 +115,5 @@ support packages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar bibtex tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
