@@ -5,8 +5,8 @@
 # catalog-license lppl1.3
 # catalog-version 4.1r
 Name:		texlive-revtex
-Version:	4.1r
-Release:	11
+Version:	4.2c
+Release:	1
 Summary:	Styles for various Physics Journals
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/revtex
