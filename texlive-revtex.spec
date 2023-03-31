@@ -1,6 +1,6 @@
 Name:		texlive-revtex
 Version:	56591
-Release:	1
+Release:	2
 Summary:	Styles for various Physics Journals
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/revtex
