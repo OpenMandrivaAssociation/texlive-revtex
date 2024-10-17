@@ -3,7 +3,7 @@ Version:	67271
 Release:	1
 Summary:	Styles for various Physics Journals
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/revtex
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/revtex
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/revtex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/revtex.doc.r%{version}.tar.xz
