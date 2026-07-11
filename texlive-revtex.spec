@@ -1,47 +1,23 @@
-Name:		texlive-revtex
-Version:	67271
-Release:	1
+%global tl_name revtex
+%global tl_revision 67271
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	4.2f
+Release:	%{tl_revision}.1
 Summary:	Styles for various Physics Journals
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/revtex
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/revtex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/revtex.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/revtex.source.r%{version}.tar.xz
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/revtex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/revtex.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/revtex.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Includes styles for American Physical Society, American
-Institute of Physics, and Optical Society of America. The
-distribution consists of the RevTeX class itself, and several
-support packages.
+Includes styles for American Physical Society, American Institute of
+Physics, and Optical Society of America. The distribution consists of
+the RevTeX class itself, and several support packages.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/bibtex/bst/revtex
-%{_texmfdistdir}/tex/latex/revtex
-%doc %{_texmfdistdir}/doc/latex/revtex
-#- source
-%doc %{_texmfdistdir}/source/latex/revtex
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar bibtex tex doc source %{buildroot}%{_texmfdistdir}
